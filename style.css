@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: sans-serif;
+}
+nav {
+  background: #222;
+  padding: 5px 20px;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.menu li {
+  font-size: 16px;
+  padding: 15px 5px;
+}
+.menu li a {
+  display: block;
+  /* with this display: block you can still know which nav bar are you on when just have mouse from far away*/
+}
+.logo a {
+  font-size: 20px;
+}
+.button.secondary {
+  border-bottom: 1px #444 solid;
+}
+/* Mobile menu*/
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle {
+  cursor: pointer;
+  /* to show the finger pointer*/
+  order: 1;
+}
+
+.item.button {
+  order: 2;
+}
+
+.item {
+  width: 100%;
+  text-align: center;
+  order: 3;
+  display: none; /*hidden the item */
+}
+.item.active {
+  display: block;
+}
+.bars {
+  background: #999;
+  display: inline-block;
+  height: 2px;
+  width: 18px;
+  position: relative;
+}
+.bars::before,
+.bars::after {
+  content: "";
+  background: #999;
+  display: inline-block;
+  height: 2px;
+  width: 18px;
+  position: absolute;
+}
+.bars::before {
+  top: 5px;
+  /*gach tren*/
+}
+.bars::after {
+  top: -5px;
+  /*gach duoi*/
+}
+/*Tablet Menu*/
+@media all and (min-width: 468px) {
+  .menu {
+    justify-content: center;
+  }
+  .logo {
+    flex: 1;
+  }
+  .item.button {
+    width: auto;
+    order: 1;
+    display: block; /*make the login and sign up show on the screen*/
+  }
+  .toggle {
+    order: 2;
+  }
+  .button.secondary {
+    border: 0; /*make border disappear*/
+  }
+  .button a {
+    text-decoration: none;
+    padding: 7px 15px;
+    background: teal;
+    border: 1px solid #006d6d;
+    border-radius: 50em;
+  }
+  .button.secondary a {
+    background: transparent; /*change color from teal to black*/
+  }
+  .button a:hover {
+    transition: all 0.25s;
+  }
+  .button:not(.secondary) a:hover {
+    background: #006d6d;
+    border-color: #005959;
+  }
+  .button.secondary a:hover {
+    color: #ddd;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .item {
+    display: block;
+    width: auto; /*make the nav from center move to the right*/
+  }
+  .toggle {
+    display: none; /*make the menu disappear*/
+  }
+  .logo {
+    order: 0;
+  }
+  .item {
+    order: 1;
+  }
+  .button {
+    order: 2;
+  }
+
+  .menu li {
+    padding: 15px 10px; /*make wider and nicer*/
+  }
+
+  .menu li.button {
+    padding-right: 0; /*to making sure they don't have double padding on the right*/
+  }
+}

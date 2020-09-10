@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Responsive Navbar HTML & CSS Flexbox</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+      $(function(){
+
+         $(".toggle").on("click", function(){
+            if($(".item").hasClass("active")){
+               $(".item").removeClass("active");
+         }
+            else{
+              $(".item").addClass("active");
+                }
+          })
+      });
+    </script>
+  </head>
+  <body>
+    <nav>
+      <ul class="menu">
+        <li class="logo"><a href="#">FollowSelena.com</a></li>
+        <li class="item"><a href="#">Home</a></li>
+        <li class="item"><a href="#">About</a></li>
+        <li class="item"><a href="#">Services</a></li>
+        <li class="item button"><a href="#">Login</a></li>
+        <li class="item button secondary"><a href="#">Sign Up</a></li>
+        <li class="toggle">
+          <span class="bars"></span></a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <a href="#" style="position: fixed; bottom: 0"
+        >https://youtube.com/c/FollowSelena</a
+      >
+    </main>
+  </body>
+</html>
